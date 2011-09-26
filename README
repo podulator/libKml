@@ -1,0 +1,7 @@
+
+A Kml library in c# by Mat Rowlands,
+incorporating
+read / write functionality, 
+validation, 
+element list extraction, 
+co-ordinate list compression
