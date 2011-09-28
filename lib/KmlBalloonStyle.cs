@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlBalloonStyle : ISearchable {
 		private string _id = string.Empty;
 		private KmlColour _colour = null;

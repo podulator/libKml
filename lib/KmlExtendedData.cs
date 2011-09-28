@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlData : ISearchable {
 		private string _name = string.Empty;
 		private string _displayName = string.Empty;

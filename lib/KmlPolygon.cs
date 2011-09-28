@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlPolygon : KmlGeometry, ISearchable  {
 		private bool _extrude = false;
 		private bool _tessellate = false;

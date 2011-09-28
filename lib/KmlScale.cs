@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlScale : ISearchable {
 		private double _x = 0.0d;
 		private double _y = 0.0d;

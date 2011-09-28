@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public enum KmlSimpleFieldTypes : int {
 		tString = 0, 
 		tInt = 1, 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public delegate void Logger (string message);
 	public interface IChangeable {
 		string Id { get; }

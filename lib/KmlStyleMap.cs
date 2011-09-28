@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlStyleMap : KmlStyleSelector, ISearchable  {
 
 		private List<KmlPair> _pairs = new List<KmlPair>();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public abstract class KmlFeature : ISearchable {
 		private string _id;
 		private string _name;

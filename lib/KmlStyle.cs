@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlStyle : KmlStyleSelector, ISearchable {
 		private KmlIconStyle _iconStyle;	// = new KmlIconStyle();
 		private KmlLabelStyle _labelStyle;	// = new KmlLabelStyle();

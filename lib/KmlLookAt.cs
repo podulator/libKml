@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlLookAt : KmlAbstractView, ISearchable  {
 		private KmlCoordinate _coordinate = new KmlCoordinate();
 		private float _heading = 0;

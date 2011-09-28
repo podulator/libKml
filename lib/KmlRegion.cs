@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlRegion : ISearchable {
 		private string _id = string.Empty;
 		private KmlLatLonAltBox _latLonAltBox = null;

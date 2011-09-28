@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlSchemaData : ISearchable {
 		private string _scheamUrl = string.Empty;
 		private List<KeyValuePair<string, string>> _simpleData = new List<KeyValuePair<string,string>>();

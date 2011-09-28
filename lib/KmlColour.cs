@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlColour : ISearchable {
 		private string _alpha = "ff";
 		private string _r = "00";

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlNetworkLinkControl : ISearchable {
 		private float _minRefreshPeriod = 0.0f;
 		private float _maxSessionLength = -1.0f;

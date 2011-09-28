@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlNetworkLink : KmlFeature, ISearchable  {
 		private bool _refreshVisibility = false;
 		private bool _flyToView = false;

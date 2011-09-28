@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlLineStyle : KmlColourStyle, ISearchable  {
 		private float _width = 1.0f;
 		

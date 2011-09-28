@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlDocument : KmlContainer, IDeleteable, ICreatable {
 
 		private List<KmlSchema> _schemas = new List<KmlSchema>();

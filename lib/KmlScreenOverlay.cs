@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public enum ScreenOverlayUnits : int {
 		fraction = 0, 
 		pixels = 1

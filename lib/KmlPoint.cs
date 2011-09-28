@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlPoint : KmlGeometry, IComparable, IChangeable, ISearchable  {
 		private bool _extrude = false;
 		private AltitudeModes _altitudeMode = AltitudeModes.clampToGround;

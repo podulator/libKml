@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlLatLonAltBox : ISearchable {
 		private float _north = 0.0f;
 		private float _south = 0.0f;

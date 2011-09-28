@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public enum AltitudeModes : int {
 		clampToGround = 0,
 		relativeToGround,

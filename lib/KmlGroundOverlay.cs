@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlGroundOverlay : KmlOverlay, IDeleteable, ISearchable  {
 		private double _altitude = 0.0d;
 		private AltitudeModes _altitudeMode = AltitudeModes.clampToGround;

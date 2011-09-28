@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlAlias : ISearchable {
 		private string _targetHref = string.Empty;
 		private string _sourceHref = string.Empty;

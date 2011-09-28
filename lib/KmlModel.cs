@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlModel : KmlGeometry, ISearchable  {
 		private AltitudeModes _altitudeMode = AltitudeModes.clampToGround;
 		private KmlLocation _location = new KmlLocation();

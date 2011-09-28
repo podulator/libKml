@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlMultiGeometry : KmlGeometry, ISearchable  {
 		private List<KmlGeometry> _elements = new List<KmlGeometry>();
 		

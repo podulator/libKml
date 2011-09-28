@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Net;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public static class KmlIO {
 
 		/// <summary>

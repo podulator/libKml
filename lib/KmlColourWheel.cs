@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 
 	public class KmlColourWheel {
 		private KmlPallette _pallette;

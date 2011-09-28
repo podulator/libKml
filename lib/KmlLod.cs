@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlLod : ISearchable {
 		private float _minLodPixels = 0.0f;
 		private float _maxLodPixels = -1.0f;

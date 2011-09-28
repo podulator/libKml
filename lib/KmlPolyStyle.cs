@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 	public class KmlPolyStyle : KmlColourStyle, ISearchable  {
 		private bool _fill = true;
 		private bool _outline = true;
