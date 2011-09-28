@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace Pod.Kml {
 	public abstract class KmlOverlay : KmlFeature, ISearchable  {
-		private string _id;
+
 		private KmlColour _colour = null;
 		private int _drawOrder = 0;
 		private KmlIcon _icon = new KmlIcon();
@@ -13,7 +13,7 @@ namespace Pod.Kml {
 		public KmlOverlay() : base() {}
 		public KmlOverlay(XmlNode parent) : base(parent) {
 			if (null != parent.Attributes["id"])
-				_id = parent.Attributes["id"].Value;
+				Id = parent.Attributes["id"].Value;
 		}
 		public KmlOverlay(XmlNode parent, Logger log) : this(parent) { Log += log; }
 
