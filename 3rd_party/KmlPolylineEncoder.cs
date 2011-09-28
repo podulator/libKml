@@ -5,7 +5,7 @@ using System.Text;
 // C# translation of Mark Rambow's Java reimplementation of Mark McClures Javascript PolylineEncoder
 // Mark Walters 2008 - mark[at]sol5.co.uk
 
-namespace TfL.Kml {
+namespace Pod.Kml {
 
 	public class KmlPolylineEncoder {
 
