@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6D4EA37-B8DF-4927-B89D-ADA2E2F75970}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>libKml</RootNamespace>
+    <AssemblyName>libKml</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="lib\KmlAbstractView.cs" />
+    <Compile Include="lib\KmlAlias.cs" />
+    <Compile Include="lib\KmlAltitudeModes.cs" />
+    <Compile Include="lib\KmlBalloonStyle.cs" />
+    <Compile Include="lib\KmlCamera.cs" />
+    <Compile Include="lib\KmlColour.cs" />
+    <Compile Include="lib\KmlColourStyle.cs" />
+    <Compile Include="lib\KmlColourWheel.cs" />
+    <Compile Include="lib\KmlContainer.cs" />
+    <Compile Include="lib\KmlCoordinate.cs" />
+    <Compile Include="lib\KmlDocument.cs" />
+    <Compile Include="lib\KmlExtendedData.cs" />
+    <Compile Include="lib\KmlFeature.cs" />
+    <Compile Include="lib\KmlFile.cs" />
+    <Compile Include="lib\KmlFolder.cs" />
+    <Compile Include="lib\KmlGeometry.cs" />
+    <Compile Include="lib\KmlGroundOverlay.cs" />
+    <Compile Include="lib\KmlHotSpot.cs" />
+    <Compile Include="lib\KmlIcon.cs" />
+    <Compile Include="lib\KmlIconStyle.cs" />
+    <Compile Include="lib\KmlInterfaces.cs" />
+    <Compile Include="lib\KmlIO.cs" />
+    <Compile Include="lib\KmlItemIcon.cs" />
+    <Compile Include="lib\KmlLabelStyle.cs" />
+    <Compile Include="lib\KmlLatLonAltBox.cs" />
+    <Compile Include="lib\KmlLatLonBox.cs" />
+    <Compile Include="lib\KmlLinearRing.cs" />
+    <Compile Include="lib\KmlLineString.cs" />
+    <Compile Include="lib\KmlLineStyle.cs" />
+    <Compile Include="lib\KmlListStyle.cs" />
+    <Compile Include="lib\KmlLocation.cs" />
+    <Compile Include="lib\KmlLod.cs" />
+    <Compile Include="lib\KmlLookAt.cs" />
+    <Compile Include="lib\KmlModel.cs" />
+    <Compile Include="lib\KmlMultiGeometry.cs" />
+    <Compile Include="lib\KmlNetworkLink.cs" />
+    <Compile Include="lib\KmlNetworkLinkControl.cs" />
+    <Compile Include="lib\KmlOrientation.cs" />
+    <Compile Include="lib\KmlOverlay.cs" />
+    <Compile Include="lib\KmlPair.cs" />
+    <Compile Include="lib\KmlPhotoOverlay.cs" />
+    <Compile Include="lib\KmlPlacemark.cs" />
+    <Compile Include="lib\KmlPoint.cs" />
+    <Compile Include="lib\KmlPolygon.cs" />
+    <Compile Include="lib\KmlPolyStyle.cs" />
+    <Compile Include="lib\KmlRegion.cs" />
+    <Compile Include="lib\KmlScale.cs" />
+    <Compile Include="lib\KmlSchema.cs" />
+    <Compile Include="lib\KmlSchemaData.cs" />
+    <Compile Include="lib\KmlScreenOverlay.cs" />
+    <Compile Include="lib\KmlStyle.cs" />
+    <Compile Include="lib\KmlStyleMap.cs" />
+    <Compile Include="lib\KmlStyleSelector.cs" />
+    <Compile Include="lib\KmlTimePrimitive.cs" />
+    <Compile Include="lib\KmlUpdate.cs" />
+    <Compile Include="3rd_party\KmlPolylineEncoder.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="3rd_party\" />
+  </ItemGroup>
+</Project>
