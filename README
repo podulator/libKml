@@ -1,5 +1,6 @@
 
 A Kml library in c# by Mat Rowlands,
+Licenced under the LGPL v3
 incorporating
 read / write functionality, 
 validation, 
