@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public class KmlPoint : KmlGeometry, IComparable, IChangeable, ISearchable  {
+	public class KmlPoint : KmlGeometry, IComparable, ISearchable  {
 		private bool _extrude = false;
 		private AltitudeModes _altitudeMode = AltitudeModes.clampToGround;
 		private KmlCoordinate _coordinate;

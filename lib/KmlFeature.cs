@@ -4,8 +4,8 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public abstract class KmlFeature : ISearchable {
-		private string _id;
+	public abstract class KmlFeature : KmlObject, ISearchable {
+		
 		private string _name;
 		private bool _visibility;
 		private bool _open;
@@ -24,35 +24,18 @@ namespace Pod.Kml {
 		private KmlExtendedData _extendedData;
 
 		public KmlFeature () {
-			_id = string.Empty;
-			_name = string.Empty;
-			_visibility = true;
-			_open = true;
-			_atomAuthor = string.Empty;
-			_atomLink = string.Empty;
-			_address = string.Empty;
-			_addressDetails = string.Empty;
-			_phoneNumber = string.Empty;
-			_snippet = string.Empty;
-			_description = string.Empty;
-			_abstractView = null;
-			_timePrimitive = null;
-			_styleUrl = string.Empty;
-			_styleSelector = null;
-			_region = null;
-			_extendedData = null;
+			initialise();
 		}
 
-		public KmlFeature (XmlNode parent) : this() {
-			_id = (null == parent.Attributes["id"]) ? string.Empty : parent.Attributes["id"].Value;
+		public KmlFeature (XmlNode parent) : base(parent) {
+			initialise();
+			//this.handleNode(parent, Log);
 		}
-		public KmlFeature (XmlNode parent, Logger log) : this(parent) { Log += log; }
+		public KmlFeature (XmlNode parent, Logger log) : this(parent) { 
+			Log += log;
+		}
 		#region properties
 
-		public string Id {
-			get { return _id; }
-			set { _id = value; }
-		}
 		public string Name {
 			get { return _name; }
 			set { _name = value; }
@@ -120,10 +103,29 @@ namespace Pod.Kml {
 		#endregion properties
 
 		#region helpers
-
-		public void handleNode (XmlNode node, Logger log) {
+		private void initialise() {
+			base.Id = string.Empty;
+			_name = string.Empty;
+			_visibility = true;
+			_open = true;
+			_atomAuthor = string.Empty;
+			_atomLink = string.Empty;
+			_address = string.Empty;
+			_addressDetails = string.Empty;
+			_phoneNumber = string.Empty;
+			_snippet = string.Empty;
+			_description = string.Empty;
+			_abstractView = null;
+			_timePrimitive = null;
+			_styleUrl = string.Empty;
+			_styleSelector = null;
+			_region = null;
+			_extendedData = null;	
+		}
+		
+		public virtual void handleNode (XmlNode node, Logger log) {
 			string key = node.Name.ToLower();
-			debug("handling key " + key);
+			debug("KmlFeature handling key " + key);
 			switch (key) {
 				case "name":
 					_name = node.InnerText;
@@ -191,18 +193,15 @@ namespace Pod.Kml {
 			};
 		}
 
-		protected void debug (string message) {
+		protected new void debug (string message) {
 			if (Log != null) Log(message);
 		}
-		public event Logger Log;
+		public new event Logger Log;
 		
-		public virtual XmlNode ToXml (XmlNode parent) {
-			// id tag
-			if (_id.Length > 0) {
-				XmlAttribute nodId = parent.OwnerDocument.CreateAttribute("id");
-				nodId.Value = _id;
-				parent.Attributes.Append(nodId);
-			}
+		public virtual new XmlNode ToXml (XmlNode parent) {
+
+			base.ToXml(parent);
+
 			// make the child nodes
 			XmlNode nodName = parent.OwnerDocument.CreateNode(XmlNodeType.Element, "name", string.Empty);
 			nodName.InnerText = Name;
@@ -287,15 +286,18 @@ namespace Pod.Kml {
 			return null;
 		}
 
-		public virtual void findElementsOfType<T> (List<object> elements) {
-			if (this is T) elements.Add(this);
-
-			if (null != StyleSelector)
-				StyleSelector.findElementsOfType<T>(elements);
-			if (null != Region)
-				Region.findElementsOfType<T>(elements);
-			if (null != ExtendedData)
-				ExtendedData.findElementsOfType<T>(elements);
+		public new void findElementsOfType<T> (List<object> elements) {
+			if (this is T) {
+				elements.Add(this);
+			} else {
+				base.findElementsOfType<T>(elements);
+				if (null != StyleSelector)
+					StyleSelector.findElementsOfType<T>(elements);
+				if (null != Region)
+					Region.findElementsOfType<T>(elements);
+				if (null != ExtendedData)
+					ExtendedData.findElementsOfType<T>(elements);
+			}
 		}
 		#endregion helpers
 	}//	class

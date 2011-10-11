@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public class KmlFolder : KmlContainer, IDeleteable, ICreatable, ISearchable  {
+	public class KmlFolder : KmlContainer, ISearchable  {
 		
 		public KmlFolder() {}
 		public KmlFolder(XmlNode parent, Logger log) : base(parent, log) { fromXml(parent, log); }

@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public class KmlDocument : KmlContainer, IDeleteable, ICreatable {
+	public class KmlDocument : KmlContainer, ISearchable {
 
 		private List<KmlSchema> _schemas = new List<KmlSchema>();
 			
@@ -66,25 +66,28 @@ namespace Pod.Kml {
 
 		public override XmlNode ToXml(XmlNode parent) {
 
-				XmlNode result = parent.OwnerDocument.CreateNode(XmlNodeType.Element, "Document", string.Empty);
+			XmlNode result = parent.OwnerDocument.CreateNode(XmlNodeType.Element, "Document", string.Empty);
 
-				if (null != _schemas && _schemas.Count > 0) {
-					foreach (KmlSchema schema in _schemas) {
-						result.AppendChild(schema.ToXml(result));
-					}
+			
+			if (null != _schemas && _schemas.Count > 0) {
+				foreach (KmlSchema schema in _schemas) {
+					result.AppendChild(schema.ToXml(result));
 				}
+			}
 
-				base.ToXml(result);
+			base.ToXml(result);
 
-				if (null != _features && _features.Count > 0) {
-					foreach (KmlFeature feature in _features) {
-						result.AppendChild(feature.ToXml(result));
-					}
+			if (null != _features && _features.Count > 0) {
+				foreach (KmlFeature feature in _features) {
+					result.AppendChild(feature.ToXml(result));
 				}
-				return result;
+			}
+			return result;
 		}
 
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
+			
+			base.findElementsOfType<T>(elements);
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			if (null != _schemas) {

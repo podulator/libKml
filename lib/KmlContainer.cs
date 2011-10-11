@@ -47,7 +47,10 @@ namespace Pod.Kml {
 					break;
 			};
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
+			
+			base.findElementsOfType<T>(elements);
+
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			foreach (KmlFeature feature in _features) {

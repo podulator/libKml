@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public class KmlGroundOverlay : KmlOverlay, IDeleteable, ISearchable  {
+	public class KmlGroundOverlay : KmlOverlay, ISearchable  {
 		private double _altitude = 0.0d;
 		private AltitudeModes _altitudeMode = AltitudeModes.clampToGround;
 		private KmlLatLonBox _latLonBox = new KmlLatLonBox();
@@ -65,7 +65,7 @@ namespace Pod.Kml {
 				result.AppendChild(_latLonBox.ToXml(result));
 			return result;
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			if (null != _latLonBox)

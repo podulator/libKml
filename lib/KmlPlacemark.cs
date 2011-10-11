@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 
 namespace Pod.Kml {
-	public class KmlPlacemark : KmlFeature, IDeleteable, ISearchable  {
+	public class KmlPlacemark : KmlFeature, ISearchable  {
 		private KmlGeometry _geometry;
 		
 		public KmlPlacemark() : base() { _geometry = null; }
@@ -20,7 +20,7 @@ namespace Pod.Kml {
 		private void fromXml (XmlNode parent, Logger log) {
 			foreach (XmlNode node in parent.ChildNodes) {
 				string key = node.Name.ToLower();
-				debug("handling key " + key);
+				debug("KmlPlacemark handling key " + key);
 				switch (key) {
 					case "point":
 						_geometry = new KmlPoint(node, log);
@@ -58,7 +58,7 @@ namespace Pod.Kml {
 			}
 			return result;
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			if (null != _geometry)

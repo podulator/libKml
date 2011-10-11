@@ -163,7 +163,6 @@ namespace Pod.Kml {
 		private KmlShapes _shape = KmlShapes.rectangle;
 		
 		public KmlPhotoOverlay() : base() {}
-		public KmlPhotoOverlay(XmlNode parent) : base(parent) { fromXml(parent); }
 		public KmlPhotoOverlay(XmlNode parent, Logger log) : base(parent, log) { fromXml(parent); }
 
 		#region properties
@@ -212,6 +211,12 @@ namespace Pod.Kml {
 				};
 			}
 		}
+		public override XmlNode ToXml(XmlNode parent) {
+			XmlNode result = parent.OwnerDocument.CreateNode(XmlNodeType.Element, "PhotoOverlay", string.Empty);
+			base.ToXml(result);
+			
+			return result;
+		}
 
 		public string shapeToString(KmlShapes value) {
 			switch (value) {
@@ -233,7 +238,7 @@ namespace Pod.Kml {
 					return KmlShapes.rectangle;
 			};
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			if (null != _point)

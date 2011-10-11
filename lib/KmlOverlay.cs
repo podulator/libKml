@@ -11,11 +11,23 @@ namespace Pod.Kml {
 		private KmlIcon _icon = new KmlIcon();
 		
 		public KmlOverlay() : base() {}
-		public KmlOverlay(XmlNode parent) : base(parent) {
-			if (null != parent.Attributes["id"])
-				Id = parent.Attributes["id"].Value;
+		public KmlOverlay(XmlNode parent, Logger log) : base(parent) { 
+			Log += log;
+			foreach (XmlNode node in parent.ChildNodes) {
+				string key = node.Name.ToLower();
+				switch (key) {
+					case "color": 
+						_colour = new KmlColour(node, log);
+						break;
+					case "drawOrder":
+						_drawOrder = Int32.Parse(node.InnerText);
+						break;
+					case "Icon":
+						_icon = new KmlIcon(node, log);
+						break;
+				};
+			}
 		}
-		public KmlOverlay(XmlNode parent, Logger log) : this(parent) { Log += log; }
 
 		public KmlColour Colour {
 			get { return _colour; }
@@ -69,7 +81,7 @@ namespace Pod.Kml {
 
 			return null;
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 			if (null != _icon)

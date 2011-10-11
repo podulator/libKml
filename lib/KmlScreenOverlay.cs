@@ -71,7 +71,7 @@ namespace Pod.Kml {
 		public KmlSizeXY (XmlNode parent) : base(parent) { }
 	}
 
-	public class KmlScreenOverlay : KmlOverlay, IDeleteable, ISearchable  {
+	public class KmlScreenOverlay : KmlOverlay, ISearchable  {
 		private KmlOverlayXY _overlayXY = new KmlOverlayXY();
 		private KmlScreenXY _screenXY = new KmlScreenXY();
 		private KmlRotationXY _rotationXY = new KmlRotationXY();
@@ -133,7 +133,7 @@ namespace Pod.Kml {
 			
 			return result;
 		}
-		public override void findElementsOfType<T> (List<object> elements) {
+		public new void findElementsOfType<T> (List<object> elements) {
 			if (this is T) elements.Add(this);
 			else base.findElementsOfType<T>(elements);
 		}
